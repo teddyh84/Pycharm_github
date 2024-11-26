@@ -4,3 +4,4 @@
 # -> demander à l'utilisateur "entrer un prix"
 # -> si il trouve le juste prix "c'est gagné !"
 # -> sinon on affiche "c'est moins" ou "c'est plus"
+

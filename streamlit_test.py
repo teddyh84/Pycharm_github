@@ -14,3 +14,5 @@ num2 = st.number_input("Entrez le deuxième nombre :", value=0)
 if st.button("Calculer la somme"):
     somme = num1 + num2
     st.success(f"La somme de {num1} et {num2} est {somme}.")
+else:
+    st.error(f"ah bah bouah")
