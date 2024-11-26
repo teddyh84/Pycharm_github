@@ -1,12 +1,16 @@
 import streamlit as st
 
-st.title("Bienvenue sur mon application")
-st.write("Ceci est une application Streamlit simple.")
+# Titre de l'application
+st.title("Additionneur Simple")
 
+# Instructions pour l'utilisateur
+st.write("Entrez deux nombres et cliquez sur le bouton pour obtenir la somme.")
 
-premier_nombre = int(input("Premier nombre ?"))
-deuxieme_nombre = int(input("Deuxième nombre ?"))
-result_adi = premier_nombre + deuxieme_nombre
-print("Le resultat de l'addition est " + str(result_adi))
+# Champs de saisie pour les deux nombres
+num1 = st.number_input("Entrez le premier nombre :", value=0)
+num2 = st.number_input("Entrez le deuxième nombre :", value=0)
 
-st.write("Le resultat de l'addition est " + str(result_adi))
+# Bouton pour déclencher l'addition
+if st.button("Calculer la somme"):
+    somme = num1 + num2
+    st.success(f"La somme de {num1} et {num2} est {somme}.")
