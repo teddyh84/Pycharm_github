@@ -1,6 +1,7 @@
 import streamlit as st
 
 import jeu_pendu
+import jeu_mastermind
 import jeu_simonsays
 import commentaire
 import formulaire
@@ -57,8 +58,9 @@ match st.session_state.menu:
         jeu_pendu.main()
 
     case "Mastermind":
-        st.title("Mastermind")
-        st.write("En cours de construction ...")
+        jeu_mastermind.main()
+        #st.title("Mastermind")
+        #st.write("En cours de construction ...")
 
     case "Yams":
         st.title("Yams")
