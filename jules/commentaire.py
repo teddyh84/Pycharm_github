@@ -5,7 +5,7 @@ def main():
     st.title("Commentaires")
     with st.form("comment_form"):
         # Widgets du formulaire
-        jeu = st.selectbox("Choisissez un jeu", ["Pendu", "Autre"])
+        jeu = st.selectbox("Choisissez un jeu", ["Pendu", "Simon Says", "Yams", "Mastermind"])
         nom = st.text_input("Votre nom")
         remarque = st.text_area("Vos commentaires")
 

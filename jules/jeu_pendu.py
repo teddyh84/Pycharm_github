@@ -1,5 +1,22 @@
 import streamlit as st
 import random
+import streamlit.components.v1 as components
+
+def son_ko():
+    components.html("""
+        <script>
+            var audio = new Audio('https://www.soundjay.com/human/fart-01.wav');
+            audio.play();
+        </script>
+        """, height=0)
+
+def son_ok():
+    components.html("""
+        <script>
+            var audio = new Audio('https://www.soundjay.com/human/applause-01.wav');
+            audio.play();
+        </script>
+        """, height=0)
 
 def tester():
     nombre_essais = 10
@@ -10,7 +27,10 @@ def tester():
             st.session_state.lettres[position] = lettre
             trouve = 1
     if trouve == 0:
+        son_ko()
         st.session_state.lettres_loupees.append(st.session_state.lettre_donnee.lower())
+    else:
+        son_ok()
     st.header(" ".join(st.session_state.lettres))
     st.progress(st.session_state.essais * 10)
     st.write(st.session_state.essais, "/", nombre_essais)

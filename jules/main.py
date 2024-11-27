@@ -3,6 +3,7 @@ import streamlit as st
 import jeu_pendu
 import jeu_mastermind
 import jeu_simonsays
+import jeu_yams
 import commentaire
 import formulaire
 import onglets
@@ -63,8 +64,9 @@ match st.session_state.menu:
         #st.write("En cours de construction ...")
 
     case "Yams":
-        st.title("Yams")
-        st.write("En cours de construction ...")
+        jeu_yams.main()
+        #st.title("Yams")
+        #st.write("En cours de construction ...")
 
     case "Simon":
         jeu_simonsays.main()
