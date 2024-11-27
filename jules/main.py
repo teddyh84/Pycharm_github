@@ -7,6 +7,7 @@ import onglets
 
 if "menu" not in st.session_state:
     st.session_state.menu = "Accueil"
+    st.title("Choisissez un menu à gauche")
 
 st.sidebar.title("🎮 Jeux")
 if st.sidebar.button("🪢 Pendu"):
