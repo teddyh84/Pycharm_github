@@ -32,7 +32,7 @@ import onglets
 
 if "menu" not in st.session_state:
     st.session_state.menu = "Accueil"
-    st.title("Choisissez un menu à gauche")
+    st.title("Choisissez un menu à gauch")
     st.write("Pour le moment, seul le Pendu et les commentaires sont disponibles")
 
 st.sidebar.title("🎮 Jeux")
