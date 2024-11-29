@@ -23,6 +23,7 @@ def calculate_score(number):
 
 def main():
     # Interface principale
+
     st.title("🎲 Jeu de Yams (Yahtzee) 🎲")
 
 
