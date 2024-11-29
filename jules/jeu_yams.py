@@ -25,6 +25,7 @@ def main():
     # Interface principale
     st.title("🎲 Jeu de Yams (Yahtzee) 🎲")
 
+
     # Initialisation des variables de session
     if "dice" not in st.session_state:
         st.session_state.dice = [0, 0, 0, 0, 0]  # Les 5 dés
