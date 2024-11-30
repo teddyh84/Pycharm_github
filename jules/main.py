@@ -1,6 +1,8 @@
 import streamlit as st
 
 import jeu_pendu
+import jeu_traduction
+import Calculatrice
 import jeu_mastermind
 import jeu_simonsays
 import jeu_yams
@@ -32,12 +34,16 @@ import onglets
 
 if "menu" not in st.session_state:
     st.session_state.menu = "Accueil"
-    st.title("Choisissez un menu à gauch")
+    st.title("Choisissez un menu à gauche")
     st.write("Pour le moment, seul le Pendu et les commentaires sont disponibles")
 
 st.sidebar.title("🎮 Jeux")
 if st.sidebar.button("🪢 Pendu"):
     st.session_state.menu = "Pendu"
+if st.sidebar.button("traducteur"):
+    st.session_state.menu = "traducteur"
+if st.sidebar.button("🧮 Calculatrice"):
+    st.session_state.menu = "Calculatrice"
 if st.sidebar.button("⚡ Simon says"):
     st.session_state.menu = "Simon"
 if st.sidebar.button("🎲 Yams"):
@@ -57,6 +63,12 @@ if st.sidebar.button("Exemple de formulaire"):
 match st.session_state.menu:
     case "Pendu":
         jeu_pendu.main()
+
+    case "Calculatrice":
+        Calculatrice.main()
+
+    case "traducteur":
+        jeu_traduction.main()
 
     case "Mastermind":
         jeu_mastermind.main()
