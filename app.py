@@ -11,6 +11,8 @@ def index():
     num2 = ""
     result = ""
     if request.method == 'POST':
+        if 'effacer' in request.form:
+            message = "Tout a été effacé"
         if 'calculer' in request.form:
             try:
                 # Récupérer les valeurs des champs du formulaire
@@ -20,7 +22,6 @@ def index():
                 message = "Le résultat est : "
             except ValueError:
                 erreur = "Erreur : veuillez entrer des nombres valides."
-
     return render_template('index.html', message=message, erreur=erreur, result=result, num1=num1, num2=num2)
 
 if __name__ == '__main__':
