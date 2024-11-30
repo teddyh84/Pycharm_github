@@ -1,7 +1,7 @@
 import streamlit as st
 
 def main():
-    st.write("Calculatrice")
+    st.title("Calculatrice")
     premier_nombre = st.number_input(
         "Premier nombre ?",
         step=1,  # Incrément sans décimales
