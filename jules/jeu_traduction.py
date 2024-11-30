@@ -2,7 +2,36 @@ import random
 import time
 import streamlit as st
 
+
+def augmenter():
+    st.session_state.nombre += 1
+
+def comparer():
+    st.write(st.session_state.nombre, " ", st.session_state.reponse)
+
 def main():
+    # Initialisation de l'état
+    if "action" not in st.session_state:
+        st.session_state.action = False
+        st.session_state.nombre = 0
+        st.session_state.reponse = 0
+
+    # Bouton pour déclencher l'action
+    if st.button("Démarrer l'action"):
+        st.session_state.action = True
+
+    # Code conditionnel basé sur l'état
+    if st.session_state.action:
+        st.write("Action en cours...")
+        st.session_state.reponse = st.text_input("Réponse")
+        comparer()
+        st.session_state.action = False
+    else:
+        st.write("En attente du clic sur le bouton.")
+        augmenter()
+
+
+def main2():
     mots_anglais = ['Apple', 'Ball', 'Cat', 'Dog', 'Fish', 'House', 'Tree', 'Book', 'Chair', 'Table',
                     'Car', 'Bike', 'Sun', 'Moon', 'Water', 'Fire', 'Food', 'Hand', 'Foot',
                     'King', 'Queen', 'Boy', 'Girl', 'Baby', 'Happy (Indice : H...)', 'Sad', 'Love', 'Good', 'Bad',
@@ -42,4 +71,3 @@ def main():
         del st.session_state.mots_anglais_a_trouver[mot_choisi]
         del st.session_state.mots_francais_a_trouver[mot_choisi]
         time.sleep(1.25)
-
