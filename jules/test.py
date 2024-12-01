@@ -2,6 +2,7 @@ import streamlit as st
 
 import jeu_pendu
 import jeu_traduction
+import jeu_traduction_2
 import Calculatrice
 import jeu_mastermind
 import jeu_simonsays
@@ -42,6 +43,8 @@ if st.sidebar.button("🪢 Pendu"):
     st.session_state.menu = "Pendu"
 if st.sidebar.button("traducteur"):
     st.session_state.menu = "traducteur"
+if st.sidebar.button("traducteur_2"):
+    st.session_state.menu = "traducteur_2"
 if st.sidebar.button("🧮 Calculatrice"):
     st.session_state.menu = "Calculatrice"
 if st.sidebar.button("⚡ Simon says"):
@@ -69,6 +72,9 @@ match st.session_state.menu:
 
     case "traducteur":
         jeu_traduction.main()
+
+    case "traducteur_2":
+        jeu_traduction_2.main()
 
     case "Mastermind":
         jeu_mastermind.main()
