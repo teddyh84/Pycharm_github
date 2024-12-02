@@ -1,75 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculatrice</title>
-    <style>
-        input[type="text"],
-        input[type="email"],
-        input[type="password"],
-        textarea,
-        select {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #dddddd;
-            border-radius: 4px;
-            box-sizing: border-box;
-            font-size: 14px;
-            transition: border-color 0.3s ease;
-        }
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Calculatrice</title>
 
-        input:focus,
-        textarea:focus,
-        select:focus {
-            border-color: #007BFF;
-            outline: none;
-            box-shadow: 0 0 5px rgba(0, 123, 255, 0.25);
-        }
-
-        textarea {
-            resize: vertical;
-            min-height: 100px;
-        }
-
-        button {
-            width: 100%;
-            padding: 10px;
-            background-color: #007BFF;
-            color: #ffffff;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
-        }
-
-        button:hover {
-            background-color: #0056b3;
-        }
-
-        #texte {
-            text-align:center;
-        }
-    </style>
-</head>
-<body>
-    <h1>Ajouter deux chiffres</h1>
-    <form method="post">
-        <b>Premier chiffre :</b>
-        <input type="text" id="num1" name="num1" value="{{ num1_html }}" required>
-        <br><br>
-        <u>Deuxième chiffre :</u>
-        <input type="text" id="num2" name="num2" value="{{ num2_html }}" required>
-        <br><br>
-        <button type="submit" id="calculer" name="calculer">Calculer</button>
-        <button type="submit" id="effacer" name="effacer">Effacer</button>
-    </form>
-    <div id="texte">
-        <p style="color: green; font-weight: bold;">{{ message_html }}{{ result_html }}</p>
-        <p style="color: red; font-weight: bold;">{{ erreur_html }}</p>
-    </div>
-</body>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <h1>Ajouter deux chiffres</h1>
+        <form method="post">
+            <b>Premier chiffre :</b>
+            <input type="text" id="num1" name="num1" value="{{ num1_html }}" required>
+            <br><br>
+            <u>Deuxième chiffre :</u>
+            <input type="text" id="num2" name="num2" value="{{ num2_html }}" required>
+            <br><br>
+            <button type="submit" id="calculer" name="calculer">Calculer</button>
+            <button type="submit" id="effacer" name="effacer">Effacer</button>
+        </form>
+        <div id="texte">
+            <p style="color: green; font-weight: bold;">{{ message_html }}{{ result_html }}</p>
+            <p style="color: red; font-weight: bold;">{{ erreur_html }}</p>
+        </div>
+    </body>
 </html>
